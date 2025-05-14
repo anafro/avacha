@@ -2,8 +2,8 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostsController;
-use Avacha\Framework\Http\Request;
-use Avacha\Framework\Http\Route;
+use Avacha\Http\Request;
+use Avacha\Http\Route;
 
 return [
     new Route(

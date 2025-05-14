@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Avacha\Framework\Http\Controller;
-use Avacha\Framework\Http\Response;
+use Avacha\Http\Controller;
+use Avacha\Http\Response;
 
 class PostsController extends Controller
 {

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Avacha\Framework\Http\Controller;
-use Avacha\Framework\Http\Response;
+use Avacha\Http\Controller;
+use Avacha\Http\Response;
 
 class HomeController extends Controller
 {
@@ -11,7 +11,7 @@ class HomeController extends Controller
     {
         $content = <<<HTML
         <h1>Welcome to Avacha!</h1>
-        <p>A supercharged PHP framework</p>
+        <p>A supercharged PHP avacha</p>
         HTML;
 
         return new Response($content);

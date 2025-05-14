@@ -13,8 +13,8 @@ is a supercharged PHP framework. It supports:
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostsController;
-use Avacha\Framework\Http\Request;
-use Avacha\Framework\Http\Route;
+use Avacha\Http\Request;
+use Avacha\Http\Route;
 
 return [
     new Route(
@@ -37,8 +37,8 @@ return [
 
 namespace App\Http\Controllers;
 
-use Avacha\Framework\Http\Controller;
-use Avacha\Framework\Http\Response;
+use Avacha\Http\Controller;
+use Avacha\Http\Response;
 
 class PostsController extends Controller
 {
