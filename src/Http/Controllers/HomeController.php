@@ -11,7 +11,7 @@ class HomeController extends Controller
     {
         $content = <<<HTML
         <h1>Welcome to Avacha!</h1>
-        <p>A supercharged PHP avacha</p>
+        <p>A supercharged PHP framework!</p>
         HTML;
 
         return new Response($content);
