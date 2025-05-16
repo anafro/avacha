@@ -40,4 +40,16 @@ class Request
     public string $path {
         get => strtok($this->uri, '?');
     }
+
+    public string $protocol {
+        get => isset($this->server['HTTPS']) && $this->server['HTTPS'] != 'off' ? 'https' : 'http';
+    }
+
+    public string $server_name {
+        get => $this->server['SERVER_NAME'];
+    }
+
+    public string $base_url {
+        get => $this->protocol . '://' . $this->server_name;
+    }
 }

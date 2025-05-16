@@ -8,8 +8,12 @@ use function FastRoute\simpleDispatcher;
 
 class Kernel
 {
+    public readonly Request $request;
+
     public function handle(Request $request): Response
     {
+        $this->request = $request;
+
         $routes = Route::all();
         $dispatcher = simpleDispatcher(function (RouteCollector $routeCollector) use (&$routes) {
             foreach ($routes as $route) {
@@ -24,14 +28,14 @@ class Kernel
 
         switch ($status) {
             case Dispatcher::NOT_FOUND:
-                return new Response('Not Found', Response::NOT_FOUND);
+                return respond_with_status(Response::NOT_FOUND);
             case Dispatcher::METHOD_NOT_ALLOWED:
-                return new Response('Method Not Allowed', Response::METHOD_NOT_ALLOWED);
+                return respond_with_status(Response::METHOD_NOT_ALLOWED);
             case Dispatcher::FOUND:
                 [$status, [$controller, $controllerMethod], $variables] = $dispatch;
                 return Controller::call($controller, $controllerMethod, $variables);
         }
 
-        return new Response('Server Error', Response::INTERNAL_SERVER_ERROR);
+        return respond_with_status(Response::INTERNAL_SERVER_ERROR);
     }
 }
