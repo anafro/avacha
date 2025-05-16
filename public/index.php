@@ -5,6 +5,7 @@ use Avacha\Http\Request;
 
 define("BASE_PATH", dirname(__DIR__));
 require_once BASE_PATH . '/vendor/autoload.php';
+require_once BASE_PATH . '/boot.php';
 
 $kernel = new Kernel();
 define("KERNEL", $kernel);
