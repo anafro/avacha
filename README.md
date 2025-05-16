@@ -35,24 +35,38 @@ return [
 ```php
 <?php declare(strict_types=1);
 
-namespace App\Http\Controllers;
+namespace App\Controllers;
 
 use Avacha\Http\Controller;
 use Avacha\Http\Response;
+use function Avacha\Templating\respond_with_template;
 
 class PostsController extends Controller
 {
     public function show(int $id): Response
     {
-        $content = <<<HTML
-        <h1>Post #$id</h1>
-        <p>Kozelsky has erupted again, damn! 🌋</p>
-        HTML;
-
-        return new Response($content);
+        return respond_with_template('posts', compact('id'));
     }
 }
 ```
+
+* [Latte](https://latte.nette.org/) HTML templates
+```latte
+{parameters
+    int $id,
+}
+
+{var $title = "Post #{$id}"}
+{layout avacha.latte}
+
+{block body}
+    <h1>Post #{$id}</h1>
+    <p>Kozelsky has erupted again, damn! 🌋</p>
+{/block}
+```
+
+* Exception trace on page
+
 
 ## Create a new Avacha project
 Clone the repository:
