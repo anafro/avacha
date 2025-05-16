@@ -7,6 +7,8 @@ define("BASE_PATH", dirname(__DIR__));
 require_once BASE_PATH . '/vendor/autoload.php';
 
 $kernel = new Kernel();
+define("KERNEL", $kernel);
+
 $request = Request::collect();
 $response = $kernel->handle($request);
 
