@@ -10,6 +10,8 @@ class HomeController extends Controller
 {
     public function index(): Response
     {
-        return respond_with_template('index');
+        return respond_with_template('index', [
+            'title' => 'Meet Avacha',
+        ]);
     }
 }
