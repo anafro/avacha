@@ -11,8 +11,8 @@ is a supercharged PHP framework. It supports:
 ```php
 <?php declare(strict_types=1);
 
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\PostsController;
+use App\Controllers\HomeController;
+use App\Controllers\PostsController;
 use Avacha\Http\Request;
 use Avacha\Http\Route;
 

@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\Http\Controllers;
+namespace App\Controllers;
 
 use Avacha\Http\Controller;
 use Avacha\Http\Response;
