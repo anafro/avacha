@@ -19,6 +19,7 @@
             "avacha/Env/env.php",
             "avacha/Templating/templates.php",
             "avacha/Filesystem/paths.php",
+            "avacha/Filesystem/dirs.php",
             "avacha/Assets/assets.php",
             "avacha/Http/responses.php"
         ]

@@ -2,8 +2,10 @@
 
 namespace Avacha\Templating;
 
+use Avacha\Env\Config;
 use Latte\Engine;
 use function Avacha\Assets\link_to_asset;
+use function Avacha\Filesystem\join_paths;
 
 class TemplateRenderer
 {
@@ -12,7 +14,11 @@ class TemplateRenderer
 
     public function __construct()
     {
+        $latte_cache_path = join_paths(BASE_PATH, Config::$templates_cache_path);
+        make_dir($latte_cache_path);
+
         $this->latte_engine = new Engine();
+        $this->latte_engine->setTempDirectory($latte_cache_path);
         $this->latte_engine->addFunction('link_to_asset', fn(string $asset_path) => link_to_asset($asset_path));
     }
 
