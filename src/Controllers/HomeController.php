@@ -6,10 +6,10 @@ use Avacha\Http\Controller;
 use Avacha\Http\Response;
 use function Avacha\Templating\respond_with_template;
 
-class PostsController extends Controller
+class HomeController extends Controller
 {
-    public function show(int $id): Response
+    public function index(): Response
     {
-        return respond_with_template('posts', compact('id'));
+        return respond_with_template('index');
     }
 }
